@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+    <!-- Left branding panel (artwork animasi dari CSS) -->
+    <section class="panel panel--left" aria-label="Branding">
+      <div class="panel__art" role="img" aria-label="Artwork animasi Barbie warna pink dan putih">
+        <span class="blob blob--1"></span>
+        <span class="blob blob--2"></span>
+        <span class="blob blob--3"></span>
+
+        <div class="ring ring--big"></div>
+        <div class="ring ring--small"></div>
+
+        <svg class="heart" viewBox="0 0 100 90">
+          <defs>
+            <linearGradient id="heartGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ffffff" />
+              <stop offset="0.5" stop-color="#ffb3d6" />
+              <stop offset="1" stop-color="#ff4fa3" />
+            </linearGradient>
+          </defs>
+          <path d="M50 86C14 58 2 40 2 25 2 12 12 3 25 3c10 0 20 6 25 15C55 9 65 3 75 3c13 0 23 9 23 22 0 15-12 33-48 61z" fill="url(#heartGrad)" />
+        </svg>
+
+        <span class="spark spark--1">♥</span>
+        <span class="spark spark--2">✦</span>
+        <span class="spark spark--3">♥</span>
+        <span class="spark spark--4">✦</span>
+        <span class="spark spark--5">♥</span>
+        <span class="spark spark--6">✦</span>
+
+        <div class="panel__badge">
+          <span class="panel__badgeText">Barbie</span>
+          <span class="panel__badgeDot" aria-hidden="true"></span>
+        </div>
+
+        <div class="panel__quote">
+          <p class="panel__quoteText">Think Pink, Live the Dream.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Right form panel -->
+    <section class="panel panel--right" aria-label="Form Sign In">
+      <div class="formCard">
+        <header class="formCard__header">
+          <div class="brand">
+            <img class="brand__logo" src="logo.jpg" alt="Logo Barbie" />
+          </div>
+
+          <h1 class="formCard__title">Welcome back</h1>
+          <p class="formCard__subtitle">Please sign in to continue.</p>
+        </header>
+
+        <div class="social">
+          <button class="social__btn" type="button">
+            <span class="social__icon" aria-hidden="true">G</span>
+            <span>Sign in with Google</span>
+          </button>
+        </div>
+
+        <div class="divider" role="separator" aria-label="Pembatas login">
+          <span class="divider__line"></span>
+          <span class="divider__text">or</span>
+          <span class="divider__line"></span>
+        </div>
+
+        <form class="authForm" action="#" method="post">
+          <div class="field">
+            <label class="field__label" for="email">Email or username</label>
+            <input class="field__input" type="text" id="email" name="email"
+              autocomplete="username" placeholder="Enter email or username" required />
+          </div>
+
+          <div class="field field--password">
+            <div class="field__topRow">
+              <label class="field__label" for="password">Password</label>
+              <a class="link" href="#" aria-label="Forgot Password">Forgot Password?</a>
+            </div>
+
+            <div class="passwordBox">
+              <input class="field__input passwordBox__input" type="password" id="password"
+                name="password" autocomplete="current-password" placeholder="Enter your password" required />
+              <button class="passwordBox__eye" type="button"
+                aria-label="Show password" title="Show/Hide password">
+                <span aria-hidden="true">👁️</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="field field--remember">
+            <label class="checkbox">
+              <input type="checkbox" name="remember" id="remember" />
+              <span class="checkbox__box" aria-hidden="true"></span>
+              <span class="checkbox__label">Remember Me</span>
+            </label>
+          </div>
+
+          <div class="actions">
+            <button class="btn btn--primary" type="submit">Sign In</button>
+          </div>
+
+          <p class="terms">
+            By continuing, you agree to our
+            <a class="link" href="#">Terms</a> and
+            <a class="link" href="#">Privacy Policy</a>.
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const eyeBtn = document.querySelector(".passwordBox__eye");
+    const passwordInput = document.getElementById("password");
+
+    eyeBtn.addEventListener("click", () => {
+      const isPassword = passwordInput.type === "password";
+      passwordInput.type = isPassword ? "text" : "password";
+      eyeBtn.setAttribute("aria-label", isPassword ? "Hide password" : "Show password");
+    });
+  </script>
+</body>
+</html>
